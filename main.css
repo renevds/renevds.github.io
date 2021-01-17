@@ -9,6 +9,7 @@ body {
     width: 100vw;
     color: white;
     overflow: hidden;
+    position: fixed;
 }
 
 .banner {
