@@ -2,91 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>René Van Der Schueren</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="anime.css">
+    <title>Title</title>
 </head>
 <body>
-
-
-<div class="banner">
-    <div class="container">
-        <div class="title text-center">
-            <h1 class="ml11 titleh">
-              <span class="text-wrapper">
-                <span class="line line1"></span>
-                <span class="letters title">René</span>
-              </span>
-            </h1>
-            <h1 class="subml11">
-              <span class="subtext-wrapper">
-                  <span class="subline subline1"></span>
-                  <span class="subletters subtitle">Van Der Schueren</span>
-                  <span class="subletters subsubtitle"> Currently working at <a class="projlink" href="https://teamedin.io/">TeamedIn</a></span>
-              </span>
-            </h1>
-        </div>
-    </div>
-    <div class="leftbottom">
-        <div class="leftbottomcontent">
-            contact@renevanderschueren.com
-            <div class="bottomlogos">
-                <a href="https://discord.gg/emffTGN9z3"><img src="discord.png" class="bottomlogo"></a>
-                <a href="https://www.linkedin.com/in/ren%C3%A9-van-der-schueren-79a567204/"><img src="linked.png" class="bottomlogo"></a>
-                <a href="https://github.com/renevds"><img src="github.png" class="bottomlogo"></a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-<script>
-    var textWrapper = document.querySelector('.ml11 .letters');
-    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
-
-    anime.timeline({loop: false})
-        .add({
-            targets: '.ml11 .line',
-            scaleY: [0, 1],
-            opacity: [0.5, 1],
-            easing: "easeOutExpo",
-            duration: 700
-        })
-        .add({
-            targets: '.ml11 .line',
-            translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 100],
-            easing: "easeOutExpo",
-            duration: 1400,
-            delay: 100
-        }).add({
-        targets: '.ml11 .letter',
-        opacity: [0, 1],
-        easing: "easeOutExpo",
-        duration: 1200,
-        offset: '-=1500',
-        delay: (el, i) => 34 * (i + 1)
-    }).add({
-        targets: '.line',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
-    });
-
-
-</script>
 
 </body>
 </html>
