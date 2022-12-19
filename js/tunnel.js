@@ -7,7 +7,7 @@ const tunnelCanvas = document.getElementById("tunnelCanvas");
 const tunnelCtx = tunnelCanvas.getContext("2d", {alpha: false});
 const part1 = document.getElementById("part1");
 const fadeScrollMultiplier = 3;
-const fadeMultiplier = 0.15;
+const fadeMultiplier = 0.25;
 
 let tunnelFrame = 0;
 let horDelta = -0.5;
