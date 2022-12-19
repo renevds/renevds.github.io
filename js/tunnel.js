@@ -89,7 +89,7 @@ function angularToCartesian(r, j) {
 
 function drawTunnel(time) {
   if (time - lastRender > tunnelFrameTime) {
-    lastRender = lastRender + tunnelFrameTime;
+    lastRender = Math.floor(time/tunnelFrameTime)*tunnelFrameTime;
     tunnelFrame++;
     if(render) {
       let inner = [];
