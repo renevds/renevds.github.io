@@ -47,11 +47,19 @@ function resizeCanvas() {
 window.addEventListener("resize", resizeCanvas, false);
 resizeCanvas();
 
-// Handle mouse movement
+// Handle mouse and touch movement
 window.addEventListener("mousemove", e => {
   const rect = tunnelCanvas.getBoundingClientRect();
   const x = (e.clientX - rect.left);
   const y = (e.clientY - rect.top);
+  horDelta = (x / cWidth) * 2 - 1;
+  verDelta = (y / cHeight) * 2 - 1;
+});
+
+window.addEventListener("touchstart", e => {
+  const rect = tunnelCanvas.getBoundingClientRect();
+  const x = (e.touches[0].clientX - rect.left);
+  const y = (e.touches[0].clientY - rect.top);
   horDelta = (x / cWidth) * 2 - 1;
   verDelta = (y / cHeight) * 2 - 1;
 });
