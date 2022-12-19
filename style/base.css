@@ -30,6 +30,7 @@ h1{
     background-color: rgba(255, 255, 255, 1);
     line-height: 50px;
     font-weight: 600;
+    -webkit-backdrop-filter: saturate(80%);
     backdrop-filter: saturate(80%);
 }
 
@@ -38,6 +39,7 @@ h1{
     background-color: var(--text);
     line-height: 50px;
     font-weight: 600;
+    -webkit-backdrop-filter: saturate(80%);
     backdrop-filter: saturate(80%);
     font-size: 30px;
 }
