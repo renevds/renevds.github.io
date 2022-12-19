@@ -58,13 +58,15 @@ window.addEventListener("touchmove ", e => {
 // Handle scroll
 document.addEventListener("scroll", function (e) {
   const y = -window.scrollY * fadeScrollMultiplier + tunnelCanvas.offsetHeight;
-  fade = Math.max(0, y / tunnelCanvas.height);
-  render = fade > 0;
-  let alpha = fade * 256;
-  let color = `rgb(${alpha},${alpha},${alpha})`;
-  document.getElementById("scroll").style.borderColor = color;
-  document.getElementById("scroll_dot").style.backgroundColor = color;
-  document.getElementById("part1_scroll").style.color = color;
+  if(y > 0){
+    fade = Math.max(0, y / tunnelCanvas.height);
+    render = fade > 0;
+    let alpha = fade * 256;
+    let color = `rgb(${alpha},${alpha},${alpha})`;
+    document.getElementById("scroll").style.borderColor = color;
+    document.getElementById("scroll_dot").style.backgroundColor = color;
+    document.getElementById("part1_scroll").style.color = color;
+  }
 });
 
 // Functions for drawing the tunnel
