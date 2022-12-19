@@ -1,7 +1,7 @@
 const tunnelParts = 100;
 const tunnelDepth = 25;
 const partDelta = 1.2;
-const framesPerLevel = 14;
+const framesPerLevel = 10;
 const tunnelFrameTime = 50;
 const tunnelCanvas = document.getElementById("tunnelCanvas");
 const tunnelCtx = tunnelCanvas.getContext("2d", {alpha: false});
@@ -57,8 +57,8 @@ window.addEventListener("touchmove ", e => {
 
 // Handle scroll
 document.addEventListener("scroll", function (e) {
-  const y = -window.scrollY * fadeScrollMultiplier + tunnelCanvas.offsetHeight;
-  if(y > 0){
+  if(window.scrollY> 0){
+    const y = -window.scrollY * fadeScrollMultiplier + tunnelCanvas.offsetHeight;
     fade = Math.max(0, y / tunnelCanvas.height);
     render = fade > 0;
     let alpha = fade * 256;
