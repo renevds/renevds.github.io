@@ -17,7 +17,6 @@
 
 #part1 {
     color: var(--background);
-    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -31,13 +30,14 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    position: relative;
 }
 
 #part1_bottom {
-    height: 10vh;
+    height: 10%;
     position: absolute;
-    top: 90vh;
-    width: 100vw;
+    top: 90%;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -57,12 +57,20 @@
     margin-bottom: 100px;
 }
 
+.part1_bottom_img{
+    height: 50px;
+}
+
 @media (max-width: 576px) {
     #hello, #cursor {
-        font-size: 50px;
+        font-size: 35px;
     }
 
     #hello_container {
         margin-bottom: 50px;
+    }
+
+    .part1_bottom_img{
+        height: 35px;
     }
 }
