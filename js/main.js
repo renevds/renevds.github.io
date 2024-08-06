@@ -1,6 +1,7 @@
 import '../css/style.css'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons'
+import statue from '../models/statue.gltf'
 
 // Constants
 const STATUE_SCALE = 0.2
@@ -19,7 +20,7 @@ if (window.innerWidth > window.innerHeight) {
 }
 
 // Variable to store the statue
-let statue
+let statueObject
 
 // Renderer setup
 const renderer = new THREE.WebGLRenderer({
@@ -30,13 +31,13 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.setPixelRatio(window.devicePixelRatio)
 document.body.appendChild(renderer.domElement)
 const loader = new GLTFLoader()
-loader.load('models/statue.gltf', function(gltf) {
-  statue = gltf.scene
-  statue.scale.set(STATUE_SCALE, STATUE_SCALE, STATUE_SCALE)
-  statue.position.y = -50
+loader.load(statue, function(gltf) {
+  statueObject = gltf.scene
+  statueObject.scale.set(STATUE_SCALE, STATUE_SCALE, STATUE_SCALE)
+  statueObject.position.y = -50
   scene.add(gltf.scene)
 
-  statue.traverse(function(child) {
+  statueObject.traverse(function(child) {
     if (child.isMesh) {
       child.material = new THREE.MeshBasicMaterial({ color: 0x595959, wireframe: true, wireframeLinewidth: 0.1 })
     }
@@ -47,8 +48,8 @@ loader.load('models/statue.gltf', function(gltf) {
 
 // Animation loop
 function animate() {
-  if (statue) {
-    statue.rotation.y -= ROTATION_SPEED
+  if (statueObject) {
+    statueObject.rotation.y -= ROTATION_SPEED
   }
   renderer.render(scene, camera)
 }
